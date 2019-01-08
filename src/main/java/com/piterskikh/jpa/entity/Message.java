@@ -2,8 +2,11 @@ package com.piterskikh.jpa.entity;
 
 
 
+import org.hibernate.annotations.GeneratorType;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /*
@@ -14,7 +17,7 @@ import javax.persistence.Id;
 public class Message {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String text;
 
@@ -25,4 +28,8 @@ public class Message {
     public void setText(String text) {
         this.text = text;
     }
+
+
+
+
 }

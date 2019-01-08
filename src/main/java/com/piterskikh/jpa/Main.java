@@ -1,6 +1,7 @@
 package com.piterskikh.jpa;
 
 
+import com.piterskikh.jpa.entity.Item;
 import com.piterskikh.jpa.entity.Message;
 import com.piterskikh.jpa.testconnection.TransactionManagerSetup;
 
@@ -30,8 +31,9 @@ public class Main {
         Message message1 = new Message();
         message1.setText("Hello World 1!");
 
-        Message message2 = new Message();
-        message2.setText("Hello World 7!");
+        Item message2 = new Item();
+        message2.setText("Hello World 22!");
+        //message2.setText("");
 
 
         em.persist(message);
