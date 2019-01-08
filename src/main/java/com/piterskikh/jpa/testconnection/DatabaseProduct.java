@@ -45,7 +45,7 @@ public enum DatabaseProduct {
 
             },
             // Yes, this should work with 5.6, no idea why Gail named it 5.7
-            org.hibernate.dialect.MariaDBDialect.class.getName()
+            org.hibernate.dialect.MariaDB103Dialect.class.getName()
     );
 
     public DataSourceConfiguration configuration;

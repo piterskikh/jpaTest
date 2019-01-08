@@ -25,7 +25,14 @@ public class Item {
 
     @Temporal(TemporalType.TIMESTAMP)
     //@UpdateTimestamp
-    @Column(insertable = false, updatable = false)
+    @Column(insertable = false, updatable = false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+    @Generated(GenerationTime.INSERT)
+    private Date createdTime;
+
+
+    @Temporal(TemporalType.TIMESTAMP)
+    //@UpdateTimestamp
+    @Column(insertable = false, updatable = false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     @Generated(GenerationTime.INSERT)
     private Date LastModified;
 
