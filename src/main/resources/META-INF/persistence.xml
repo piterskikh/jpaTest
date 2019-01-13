@@ -9,6 +9,8 @@
         <jta-data-source>myDS</jta-data-source>
         <class>com.piterskikh.jpa.entity.Message</class>
         <class>com.piterskikh.jpa.entity.Item</class>
+        <class>com.piterskikh.jpa.entity.User</class>
+
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>

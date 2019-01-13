@@ -1,8 +1,10 @@
 package com.piterskikh.jpa;
 
 
+import com.piterskikh.jpa.entity.Address;
 import com.piterskikh.jpa.entity.Item;
 import com.piterskikh.jpa.entity.Message;
+import com.piterskikh.jpa.entity.User;
 import com.piterskikh.jpa.testconnection.TransactionManagerSetup;
 
 import javax.persistence.EntityManager;
@@ -35,10 +37,17 @@ public class Main {
         message2.setText("Hello World 22!");
         //message2.setText("");
 
+        User user = new User();
+       // user.setHomeAddress(new Address("One", "Two", "Three"));
+
 
         em.persist(message);
         em.persist(message1);
         em.persist(message2);
+        em.persist(user);
+
+
+
 
 
         tx.commit();

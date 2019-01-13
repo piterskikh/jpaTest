@@ -7,7 +7,10 @@ import org.hibernate.annotations.GenerationTime;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
+
+import static javax.persistence.EnumType.*;
 
 
 @Entity
@@ -35,6 +38,26 @@ public class Item {
     @Column(insertable = false, updatable = false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     @Generated(GenerationTime.INSERT)
     private Date LastModified;
+
+    @NotNull
+    @Enumerated(STRING)
+    private AuctionType auctionType = AuctionType.HIGHEST_BID;
+
+    public Date getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    public AuctionType getAuctionType() {
+        return auctionType;
+    }
+
+    public void setAuctionType(AuctionType auctionType) {
+        this.auctionType = auctionType;
+    }
 
     public Long getId() {
         return id;
