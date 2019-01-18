@@ -2,6 +2,7 @@ package com.piterskikh.jpa.entity;
 
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
 
@@ -15,7 +16,8 @@ public class Address {
 
    /* @NotNull
     @Column(nullable = false, length = 5)*/
-    private String zipcode;
+    //@Convert(converter = ZipCodeConverter.class)
+    private  ZipCode zipCode;
 
    /* @NotNull
     @Column(nullable = false)*/
@@ -27,9 +29,9 @@ public class Address {
     }
 
 
-    public Address(String street, String zipcode, String city) {
+    public Address(String street, ZipCode zipcode, String city) {
         this.street = street;
-        this.zipcode = zipcode;
+        this.zipCode = zipcode;
         this.city = city;
     }
 
@@ -42,12 +44,12 @@ public class Address {
         this.street = street;
     }
 
-    public String getZipcode() {
-        return zipcode;
+    public ZipCode getZipcode() {
+        return zipCode;
     }
 
     public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
+        this.zipCode = zipCode;
     }
 
     public String getCity() {

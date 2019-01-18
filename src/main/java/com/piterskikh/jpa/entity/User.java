@@ -12,28 +12,27 @@ public class User implements Serializable {
     private Long id;
 
 
-    private Address homeAddress;
+   // private Address homeAddress;
 
 
-    @AttributeOverrides({@AttributeOverride(name = "street", column = @Column(name = "billing_street")),
+   /* @AttributeOverrides({@AttributeOverride(name = "street", column = @Column(name = "billing_street")),
             @AttributeOverride(name = "zipcode", column = @Column(name = "billing_zipcode")),
             @AttributeOverride(name = "city", column = @Column(name = "billing_city"))
     })
-    private Address billingAddress;
+    private Address billingAddress;*/
 
     public Long getId() {
         return id;
     }
 
 
-
-    public Address getHomeAddress() {
+    /*public Address getHomeAddress() {
         return homeAddress;
     }
 
     public void setHomeAddress(Address homeAddress) {
         this.homeAddress = homeAddress;
-    }
+    }*/
 
    /* public Address getBillingAddress() {
         return billingAddress;

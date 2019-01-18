@@ -1,10 +1,8 @@
 package com.piterskikh.jpa.entity;
 
 
-import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -42,6 +40,11 @@ public class Item {
     @NotNull
     @Enumerated(STRING)
     private AuctionType auctionType = AuctionType.HIGHEST_BID;
+
+    @NotNull
+    private MonetaryAmount buyNowPrice;
+
+
 
     public Date getCreatedTime() {
         return createdTime;
@@ -81,5 +84,13 @@ public class Item {
 
     public void setLastModified(Date lastMoifed) {
         this.LastModified = lastMoifed;
+    }
+
+    public MonetaryAmount getBuyNowPrice() {
+        return buyNowPrice;
+    }
+
+    public void setBuyNowPrice(MonetaryAmount monetaryAmount) {
+        this.buyNowPrice = monetaryAmount;
     }
 }
