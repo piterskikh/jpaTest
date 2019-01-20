@@ -30,11 +30,11 @@ public class Main {
         Message message1 = new Message();
         message1.setText("Hello World 1!");*/
 
-        Item item = new Item();
+        /*Item item = new Item();
         item.setBuyNowPrice(MonetaryAmount.fromString("50 USD"));
         item.setText("Hello World 22!");
 
-        em.persist(item);
+        em.persist(item);*/
         //message2.setText("");
 
        /* User user = new User();

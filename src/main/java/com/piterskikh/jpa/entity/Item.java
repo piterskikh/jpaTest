@@ -12,7 +12,6 @@ import static javax.persistence.EnumType.*;
 
 
 @Entity
-//@Table(name = "\"ITEMS\"")
 public class Item {
 
     @Id
