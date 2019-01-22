@@ -1,17 +1,14 @@
 package com.piterskikh.jpa;
 
 
-import com.piterskikh.jpa.entity.Address;
-import com.piterskikh.jpa.entity.Item;
-import com.piterskikh.jpa.entity.Message;
-import com.piterskikh.jpa.entity.User;
+import com.piterskikh.jpa.entity.Post;
+import com.piterskikh.jpa.entity.PostComment;
 import com.piterskikh.jpa.testconnection.TransactionManagerSetup;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.transaction.UserTransaction;
-import java.util.List;
 
 
 public class Main {
@@ -25,28 +22,22 @@ public class Main {
 
         EntityManager em = emf.createEntityManager();
         UserTransaction tx = TM.getUserTransaction();
-        tx.begin();
-
-       Message message = new Message();
-        message.setText("Hello World!");
-
-        Message message1 = new Message();
-        message1.setText("Hello World 1!");
-
-        Item message2 = new Item();
-        message2.setText("Hello World 22!");
-        //message2.setText("");
-
-        User user = new User();
-       // user.setHomeAddress(new Address("One", "Two", "Three"));
+       tx.begin();
 
 
-        em.persist(message);
-        em.persist(message1);
-        em.persist(message2);
-        em.persist(user);
+        Post post = new Post("First post");
 
+        post.getComments().add(
+                new PostComment("My first review")
+        );
+        post.getComments().add(
+                new PostComment("My second review")
+        );
+        post.getComments().add(
+                new PostComment("My third review")
+        );
 
+        em.persist(post);
 
 
 
@@ -58,13 +49,13 @@ public class Main {
 
 
 
-            List<Message> messages = em.createQuery("select m from Message m", Message.class).getResultList();
+          /*  List<Message> messages = em.createQuery("select m from Message m", Message.class).getResultList();
 
             for (Message message3 : messages) {
 
                 System.out.println(message3.getText());
 
-            }
+            }*/
 
 
 
