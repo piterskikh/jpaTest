@@ -7,14 +7,15 @@
     <persistence-unit name="HelloWorldPU">
 
         <jta-data-source>myDS</jta-data-source>
-        <class>com.piterskikh.jpa.entity.Post</class>
+        <!--<class>com.piterskikh.jpa.entity.Post</class>
         <class>com.piterskikh.jpa.entity.PostComment</class>
 
-        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>-->
 
         <properties>
 
             <!--<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>-->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDB103Dialect"/>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.use_sql_comments" value="true"/>

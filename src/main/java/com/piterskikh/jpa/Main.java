@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.transaction.UserTransaction;
+import java.util.List;
 
 
 public class Main {
@@ -47,17 +48,23 @@ public class Main {
 
 
 
+        tx.begin();
 
+          List<Post> postList = em.createQuery("select p from Post p", Post.class).getResultList();
 
-          /*  List<Message> messages = em.createQuery("select m from Message m", Message.class).getResultList();
+            for (Post post1 : postList) {
 
-            for (Message message3 : messages) {
+                System.out.println(post1.getTitle());
 
-                System.out.println(message3.getText());
+                for (PostComment comment : post1.getComments()) {
 
-            }*/
+                    System.out.println(comment.getReview());
 
+                }
 
+            }
+
+        tx.commit();
 
     }
 }

@@ -50,6 +50,7 @@ public class TransactionManagerSetup {
 
 
 
+
         databaseProduct.configuration.configure(datasource, null);
 
 
