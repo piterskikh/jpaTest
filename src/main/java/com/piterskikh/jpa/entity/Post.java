@@ -1,6 +1,7 @@
 package com.piterskikh.jpa.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,9 +13,11 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
+    @NotNull
     private String title;
 
-    @OneToMany(
+    @OneToMany(mappedBy = "post",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )

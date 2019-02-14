@@ -28,7 +28,7 @@ public class TransactionManagerSetup {
 
     protected final Context context = new InitialContext();
     protected final PoolingDataSource datasource;
-    public final DatabaseProduct databaseProduct = DatabaseProduct.MYSQL;
+    public final DatabaseProduct databaseProduct = DatabaseProduct.H2;
 
 
 

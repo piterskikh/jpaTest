@@ -12,9 +12,9 @@ public class PostComment {
 
     private String review;
 
-   /* @ManyToOne
-    @JoinColumn(name="cart_id", nullable=false)
-    private Post post;*/
+    @ManyToOne
+    @JoinColumn(name="post_id_sas", nullable = false)
+    private Post post;
 
 
     public PostComment() {
@@ -41,11 +41,11 @@ public class PostComment {
         this.review = review;
     }
 
-    /*public Post getPost() {
+    public Post getPost() {
         return post;
     }
 
     public void setPost(Post post) {
         this.post = post;
-    }*/
+    }
 }

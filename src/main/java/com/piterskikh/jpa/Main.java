@@ -28,7 +28,7 @@ public class Main {
 
         Post post = new Post("First post");
 
-        post.getComments().add(
+      /*  post.getComments().add(
                 new PostComment("My first review")
         );
         post.getComments().add(
@@ -36,7 +36,7 @@ public class Main {
         );
         post.getComments().add(
                 new PostComment("My third review")
-        );
+        );*/
 
         em.persist(post);
 
